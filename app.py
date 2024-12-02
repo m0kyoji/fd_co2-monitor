@@ -26,4 +26,4 @@ st.dataframe(df)
 # 更新ボタン
 if st.button('データを更新'):
     st.cache_data.clear()
-    st.experimental_rerun()
+    st.rerun()
