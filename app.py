@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import pandas as pd
+import time
 
 # スプレッドシートに接続
 conn = st.connection("gsheets", type=GSheetsConnection)
@@ -18,3 +19,7 @@ st.line_chart(df.set_index('タイムスタンプ')[['気温', '湿度', 'CO2濃
 
 # データテーブルの表示（オプション）
 st.dataframe(df)
+
+# 5分経ってから再実行
+time.sleep(300)
+st.experimental_rerun()
